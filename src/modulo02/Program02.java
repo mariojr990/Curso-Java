@@ -20,31 +20,32 @@ public class Program02 {
 		System.out.print("Price: ");
 		double price = sc.nextDouble();
 
-		System.out.print("Quantity in stock: ");
-		int quantity = sc.nextInt();
+		Product02 product02 = new Product02(name, price);
 		
-
-		Product02 product = new Product02(name, price, quantity);
+		product02.setName ("Computer");
+		System.out.println("Updated name: "+ product02.getName());
+		product02.setPrice(1200);
+		System.out.println("Updated price: "+product02.getPrice());
+		
+		System.out.println();
+		System.out.println("Product data: " + product02);
 
 		System.out.println();
-		System.out.println("Product data: " + product);
+		System.out.println("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+
+		product02.addProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + product02);
 
 		System.out.println();
 		System.out.println("Enter the number of products to be added in stock: ");
 		quantity = sc.nextInt();
-
-		product.addProducts(quantity);
-
-		System.out.println();
-		System.out.println("Updated data: " + product);
+		product02.removeProducts(quantity);
 
 		System.out.println();
-		System.out.println("Enter the number of products to be added in stock: ");
-		quantity = sc.nextInt();
-		product.removeProducts(quantity);
-
-		System.out.println();
-		System.out.println("Updated data: " + product);
+		System.out.println("Updated data: " + product02);
 
 		sc.close();
 	}
